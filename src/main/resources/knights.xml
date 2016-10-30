@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+    <bean id="braveKnight" class="zhanglw.springinaction.study.s1.c1.BraveKnight">
+        <constructor-arg ref="quest"/>
+    </bean>
+
+    <bean id="quest" class="zhanglw.springinaction.study.s1.c1.SlayDragonQuest">
+        <constructor-arg value="#{T(System).out}"/>
+    </bean>
+
+    <bean id="minstrel" class="zhanglw.springinaction.study.s1.c1.Minstrel">
+        <constructor-arg value="#{T(System).out}"/>
+    </bean>
+
+    <!--声明切面-->
+    <aop:config proxy-target-class="true">
+        <aop:aspect ref="minstrel">
+            <!--定义切点-->
+            <aop:pointcut id="embark"
+                          expression="execution(* *.embarkOnQuest(..))"/>
+
+            <aop:pointcut id="testAopAA"
+                          expression="execution(String zhanglw.springinaction.study.s1.c1.BraveKnight.testAop(..))"/>
+
+            <!--前置通知-->
+            <aop:before pointcut-ref="embark" method="singBeforeQuest"/>
+
+            <aop:around method="permissionCheck" pointcut-ref="testAopAA"/>
+            <!--后置通知-->
+            <aop:after pointcut-ref="embark" method="singAfterQuest"/>
+        </aop:aspect>
+    </aop:config>
+</beans>
