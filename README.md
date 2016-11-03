@@ -110,6 +110,6 @@ Spring Boot
 * mock框架Mockito
 * SpEL
 
-#### 难点
+#### 1.9 难点
 
 * aop中proxy-target-class理解和原理
