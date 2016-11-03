@@ -53,11 +53,11 @@
 
 ##### 1.5.2 bean的生命周期
 
-* 实例化->填充属性->调用BeanNameAware的setBeanName()方法->调用BeanFactoryAware的setBeanFactory()方法</br>
-->调用ApplicationContextAware的setApplicationContext()方法->调用BeanPostProcessor的预初始化方法</br>
-->调用InitializingBean的afterPropertiesSet()方法->调用自定义方法的初始化方法->调用BeanPostProcessor的初始化后方法</br>
-->bean可以使用了
---- 容器关闭
+* 实例化->填充属性->调用BeanNameAware的setBeanName()方法->调用BeanFactoryAware的setBeanFactory()方法
+->调用ApplicationContextAware的setApplicationContext()方法->调用BeanPostProcessor的预初始化方法
+->调用InitializingBean的afterPropertiesSet()方法->调用自定义方法的初始化方法->调用BeanPostProcessor的初始化后方法
+->bean可以使用了   
+--- 容器关闭   
 调用DisposableBean的destory()方法->调用自定义的销毁方法
 
 #### 1.6 Spring模块
@@ -91,8 +91,9 @@ Instrumentation
 
 * 装配 -> 创建应用组件之间协作的行为
 * Spring Portfolio
->Spring Web Flow  
-Spring Web Service   
+
+> Spring Web Flow  
+> Spring Web Service   
 Spring Security   
 Spring Integration    
 Spring Batch     
@@ -105,7 +106,7 @@ Spring Boot
 #### 非中心知识点
 
 * mock框架Mockito
-* SpEl
+* SpEL
 
 #### 难点
 
