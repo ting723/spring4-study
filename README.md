@@ -64,8 +64,10 @@
 
 * Spring4中有20个不同模块,每个模块3个JAR文件(二进制,源码Jar,JavaDoc)
 * Spring 框架模块</br>
+
 Spring核心容器 
->Beans  Core Context Expression [Context Support]
+
+> Beans  Core Context Expression [Context Support]
 
 面向切面编程
 
@@ -87,7 +89,7 @@ Instrumentation
 
 >Test
 
-#### 其他点
+#### 1.7 其他点
 
 * 装配 -> 创建应用组件之间协作的行为
 * Spring Portfolio
@@ -103,7 +105,7 @@ Spring Mobile
 Spring for Android
 Spring Boot
 
-#### 非中心知识点
+#### 1.8 非中心知识点
 
 * mock框架Mockito
 * SpEL
