@@ -1,17 +1,18 @@
-package zhanglw.springinaction.study.s1.c1;
+package zhanglw.springinaction.study.s1.c2;
 
-import org.springframework.stereotype.Component;
+import javax.inject.Named;
 
 /**
  * Created by zhanglw on 2016/10/7.
  */
-@Component("lonelyHeartsClub")
+//@Component("lonelyHeartsClub")
+@Named("lonelyHeartsClub")
 public class SgtPeppers implements CompactDisc {
     private String title = "Sgt. Pepper's Lonely Hearts Club Band";
     private String artist = "The Beatles";
 
     @Override
     public void play() {
-        System.out.println("Playing " + title + " by " + artist);
+        System.out.print("Playing " + title + " by " + artist);
     }
 }
