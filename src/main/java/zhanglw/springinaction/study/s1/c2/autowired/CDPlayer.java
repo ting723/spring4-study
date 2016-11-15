@@ -1,4 +1,4 @@
-package zhanglw.springinaction.study.s1.c2;
+package zhanglw.springinaction.study.s1.c2.autowired;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -14,17 +14,17 @@ public class CDPlayer implements MediaPlayer {
     private CompactDisc cd;
 
 //    @Autowired
-//    public CDPlayer(CompactDisc cd) {
+//    public CDPlayer(JC_CompactDisc cd) {
 //        this.cd = cd;
 //    }
 
 //    @Autowired
-//    public void setCd(CompactDisc cd) {
+//    public void setCd(JC_CompactDisc cd) {
 //        this.cd = cd;
 //    }
 
 //    @Inject
-//    public void insertDisc(CompactDisc cd) {
+//    public void insertDisc(JC_CompactDisc cd) {
 //        this.cd = cd;
 //    }
 

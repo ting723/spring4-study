@@ -1,4 +1,4 @@
-package zhanglw.springinaction.study.s1.c2;
+package zhanglw.springinaction.study.s1.c2.autowired;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -8,6 +8,6 @@ import org.springframework.context.annotation.Configuration;
  */
 
 @Configuration
-@ComponentScan(basePackageClasses = {CDPlayerConfig.class,CompactDisc.class})
+@ComponentScan(basePackageClasses = {CDPlayerConfig.class, CompactDisc.class})
 public class CDPlayerConfig {
 }

@@ -1,13 +1,9 @@
-package zhanglw.springinaction.study.s1.c2;
-
-import javax.inject.Named;
+package zhanglw.springinaction.study.s1.c2.javaconfig;
 
 /**
  * Created by zhanglw on 2016/10/7.
  */
-//@Component("lonelyHeartsClub")
-@Named("lonelyHeartsClub")
-public class SgtPeppers implements CompactDisc {
+public class JC_SgtPeppers implements JC_CompactDisc {
     private String title = "Sgt. Pepper's Lonely Hearts Club Band";
     private String artist = "The Beatles";
 
