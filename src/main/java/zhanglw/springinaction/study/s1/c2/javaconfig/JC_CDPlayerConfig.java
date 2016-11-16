@@ -15,15 +15,15 @@ public class JC_CDPlayerConfig {
     }
 
 //    @Bean
-//    public JC_CompactDisc randomBeatlesCD() {
+//    public XML_CompactDisc randomBeatlesCD() {
 //        int choice = (int) Math.floor(Math.random() * 4);
 //        if (choice == 0) {
-//            return new JC_SgtPeppers();
+//            return new XML_SgtPeppers();
 //        } else if (choice == 1) {
-//            return new JC_SgtPeppers();
+//            return new XML_SgtPeppers();
 //        }
 //
-//        return new JC_SgtPeppers();
+//        return new XML_SgtPeppers();
 //    }
 
     @Bean
@@ -32,8 +32,8 @@ public class JC_CDPlayerConfig {
     }
 
 //    @Bean
-//    public CDPlayerJC anotherCDPlayer() {
-//        return new CDPlayerJC(sgtPeperts());
+//    public CDPlayerXML anotherCDPlayer() {
+//        return new CDPlayerXML(sgtPeperts());
 //    }
 
     @Bean
