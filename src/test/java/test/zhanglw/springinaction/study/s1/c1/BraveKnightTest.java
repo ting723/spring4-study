@@ -1,6 +1,8 @@
-package zhanglw.springinaction.study.s1.c1;
+package test.zhanglw.springinaction.study.s1.c1;
 
 import org.junit.Test;
+import zhanglw.springinaction.study.s1.c1.BraveKnight;
+import zhanglw.springinaction.study.s1.c1.Quest;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;

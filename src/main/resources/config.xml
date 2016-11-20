@@ -8,16 +8,40 @@
 
     <bean id="xmlSgtPepers" class="zhanglw.springinaction.study.s1.c2.xml.XML_SgtPeppers"/>
 
-    <bean id="xmlCompactDisc" class="zhanglw.springinaction.study.s1.c2.xml.XML_CompactDisc"/>
+    <!--使用constructor-arg 元素-->
+    <bean id="cdPlayerXml_csa" class="zhanglw.springinaction.study.s1.c2.xml.CDPlayerXML">
+        <constructor-arg ref="xmlSgtPepers"/>
+    </bean>
 
     <!--c-命名空间-->
-    <bean id="cdPlayerXml" class="zhanglw.springinaction.study.s1.c2.xml.CDPlayerXML"
+    <!--使用c:构造参数名-ref -->
+    <bean id="cdPlayerXml_parma_name" class="zhanglw.springinaction.study.s1.c2.xml.CDPlayerXML"
+          c:cd-ref="xmlSgtPepers"/>
 
-          c:_0-ref="xmlCompactDisc"/>
+    <!--使用c:构造参数位置-ref ,比较好使用-->
+    <bean id="cdPlayerXml_0" class="zhanglw.springinaction.study.s1.c2.xml.CDPlayerXML" c:_0-ref="xmlSgtPepers"/>
 
-    <!--c:_-ref="xmlCompactDisc"></bean>-->
-    <!--c:cd-ref="xmlCompactDisc">-->
-    <!--<constructor-arg ref="xmlCompactDisc"/>-->
+    <!--在仅一个参数时,使用c:_ref ,这种用法比较奇特,不建议使用-->
+    <bean id="cdPlayerXml_specail" class="zhanglw.springinaction.study.s1.c2.xml.CDPlayerXML" c:_-ref="xmlSgtPepers"/>
 
+    <!--字面量注入-->
+    <!--constructor 元素-->
+    <bean id="xmlBlankDisc_arg" class="zhanglw.springinaction.study.s1.c2.xml.XML_BlankDisc">
+        <constructor-arg value="Sgt. Pepper's Lonely Hearts Club Band"/>
+        <constructor-arg value="The Beatles"/>
+    </bean>
+
+    <!--c命名空间-->
+    <bean id="xmlBlankDisc_c" class="zhanglw.springinaction.study.s1.c2.xml.XML_BlankDisc"
+          c:_0="Sgt. Pepper's Lonely Hearts Club Band" c:_1="The Beatles"/>
+
+    <!--BlankDisc Player-->
+    <bean id="cdPlayerxml_BlankDisc_arg" class="zhanglw.springinaction.study.s1.c2.xml.CDPlayerXML">
+        <constructor-arg ref="xmlSgtPepers"/>
+    </bean>
+
+    <bean id="cdPlayerxml_BlankDisc_c" class="zhanglw.springinaction.study.s1.c2.xml.CDPlayerXML">
+        <constructor-arg ref="xmlSgtPepers"/>
+    </bean>
 
 </beans>

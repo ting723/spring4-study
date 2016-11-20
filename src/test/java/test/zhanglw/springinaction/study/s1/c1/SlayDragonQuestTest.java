@@ -1,7 +1,8 @@
-package zhanglw.springinaction.study.s1.c1;
+package test.zhanglw.springinaction.study.s1.c1;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import zhanglw.springinaction.study.s1.c1.BraveKnight;
 
 /**
  * Created by zhanglw on 2016/10/20.

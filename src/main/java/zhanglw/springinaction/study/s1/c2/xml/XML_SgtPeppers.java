@@ -9,6 +9,6 @@ public class XML_SgtPeppers implements XML_CompactDisc {
 
     @Override
     public void play() {
-        System.out.print("Playing " + title + " by " + artist);
+        System.out.println("Playing " + title + " by " + artist);
     }
 }

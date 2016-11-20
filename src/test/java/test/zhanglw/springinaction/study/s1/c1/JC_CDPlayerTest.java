@@ -1,4 +1,4 @@
-package zhanglw.springinaction.study.s1.c1;
+package test.zhanglw.springinaction.study.s1.c1;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -7,9 +7,9 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import zhanglw.springinaction.study.s1.c2.autowired.CDPlayerConfig;
-import zhanglw.springinaction.study.s1.c2.autowired.CompactDisc;
-import zhanglw.springinaction.study.s1.c2.autowired.MediaPlayer;
+import zhanglw.springinaction.study.s1.c2.javaconfig.JC_CDPlayerConfig;
+import zhanglw.springinaction.study.s1.c2.javaconfig.JC_CompactDisc;
+import zhanglw.springinaction.study.s1.c2.javaconfig.JC_MediaPlayer;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -20,17 +20,17 @@ import static org.junit.Assert.assertNotNull;
  * Created by zhanglw on 2016/10/7.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = CDPlayerConfig.class)
-public class CDPlayerTest {
+@ContextConfiguration(classes = JC_CDPlayerConfig.class)
+public class JC_CDPlayerTest {
 
     @Rule
     public final StandardOutputStreamLog log = new StandardOutputStreamLog();
 
     @Autowired
-    private CompactDisc CompactDisc;
+    private JC_CompactDisc CompactDisc;
 
     @Autowired
-    private MediaPlayer player;
+    private JC_MediaPlayer player;
 
     @Test
     public void cdShouldNotBeNull() {
