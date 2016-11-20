@@ -1,3 +1,4 @@
 .idea/
 spring4-study.iml
 target/
+src/test/resources/

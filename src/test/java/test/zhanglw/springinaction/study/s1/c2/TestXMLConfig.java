@@ -35,6 +35,22 @@ public class TestXMLConfig {
     private CDPlayerXML cdPlayerxml_BlankDisc_c;
 
 
+    @Autowired
+    private CDPlayerXML cdPlayerxml_BlankDisc_List;
+
+    @Autowired
+    private CDPlayerXML cdPlayerXml_property_set;
+
+    @Autowired
+    private CDPlayerXML cdPlayerXml_property_set_pNamespace;
+
+    @Autowired
+    private CDPlayerXML cdPlayerXml_property_set_pNamespace_pList;
+
+    @Autowired
+    private CDPlayerXML cdPlayerXml_property_set_pNamespace_pNamespaceList;
+
+
     @Test
     public void test() {
 
@@ -62,6 +78,20 @@ public class TestXMLConfig {
         System.out.println("\n====== cdPlayerxml_BlankDisc_c Test=====");
         cdPlayerxml_BlankDisc_c.play();
 
+        System.out.println("\n====== cdPlayerxml_BlankDisc_List Test=====");
+        cdPlayerxml_BlankDisc_List.play();
+
+        System.out.println("\n====== cdPlayerXml_property_set Test=====");
+        cdPlayerXml_property_set.play();
+
+        System.out.println("\n====== cdPlayerXml_property_set_pNamespace Test=====");
+        cdPlayerXml_property_set_pNamespace.play();
+
+        System.out.println("\n====== cdPlayerXml_property_set_pNamespace_pList Test=====");
+        cdPlayerXml_property_set_pNamespace_pList.play();
+
+        System.out.println("\n====== cdPlayerXml_property_set_pNamespace_pNamespaceList Test=====");
+        cdPlayerXml_property_set_pNamespace_pNamespaceList.play();
     }
 
 }

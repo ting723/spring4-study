@@ -8,21 +8,21 @@ public class CDPlayerXML implements XML_MediaPlayer {
 
     private XML_CompactDisc cd;
 
-//    public CDPlayerXML() {
-//    }
+    public CDPlayerXML() {
+    }
 
 
     public CDPlayerXML(XML_CompactDisc cd) {
         this.cd = cd;
     }
 
-//    public void setCd(XML_CompactDisc cd) {
-//        this.cd = cd;
-//    }
-//
-//    public void insertDisc(XML_CompactDisc cd) {
-//        this.cd = cd;
-//    }
+    public void setCd(XML_CompactDisc cd) {
+        this.cd = cd;
+    }
+
+    public void insertDisc(XML_CompactDisc cd) {
+        this.cd = cd;
+    }
 
     @Override
     public void play() {

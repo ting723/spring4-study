@@ -3,8 +3,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:c="http://www.springframework.org/schema/c"
        xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd">
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util.xsd
+        ">
 
     <bean id="xmlSgtPepers" class="zhanglw.springinaction.study.s1.c2.xml.XML_SgtPeppers"/>
 
@@ -44,4 +47,109 @@
         <constructor-arg ref="xmlSgtPepers"/>
     </bean>
 
+    <!--List-->
+
+    <bean id="xmlBlankDisc_List" class="zhanglw.springinaction.study.s1.c2.xml.XML_BlankDisc">
+        <constructor-arg value="Sgt. Pepper's Lonely Hearts Club Band"/>
+        <constructor-arg value="The Beatles"/>
+        <constructor-arg>
+            <!--<list>-->
+            <!--<value>Sgt. Pepper's Lonely Hearts Club Band</value>-->
+            <!--<value>With a Little Help from My Friends</value>-->
+            <!--<value>Lucy in the Sky with Diamonds</value>-->
+            <!--<value>Getting Better</value>-->
+            <!--<value>Fixing a Hole</value>-->
+            <!--<value>She's Leaving Home</value>-->
+            <!--<value>Being for the Benefit of Mr. Kite!</value>-->
+            <!--<value>Within You Without You</value>-->
+            <!--<value>When I'm Sixty-Four</value>-->
+            <!--<value>Lovely Rita</value>-->
+            <!--<value>Good Morning Good Morning</value>-->
+            <!--<value>Sgt. Pepper's Lonely Hearts Club Band (Reprise)</value>-->
+            <!--<value>A Day in the Life</value>-->
+            <!--</list>-->
+            <set>
+                <value>Sgt. Pepper's Lonely Hearts Club Band</value>
+                <value>With a Little Help from My Friends</value>
+                <value>Lucy in the Sky with Diamonds</value>
+                <value>Getting Better</value>
+                <value>Fixing a Hole</value>
+                <value>She's Leaving Home</value>
+                <value>Being for the Benefit of Mr. Kite!</value>
+                <value>Within You Without You</value>
+                <value>When I'm Sixty-Four</value>
+                <value>Lovely Rita</value>
+                <value>Good Morning Good Morning</value>
+                <value>Sgt. Pepper's Lonely Hearts Club Band (Reprise)</value>
+                <value>A Day in the Life</value>
+            </set>
+        </constructor-arg>
+    </bean>
+
+    <bean id="cdPlayerxml_BlankDisc_List" class="zhanglw.springinaction.study.s1.c2.xml.CDPlayerXML"
+          c:_-ref="xmlBlankDisc_List"/>
+
+
+    <!--属性-->
+    <bean id="cdPlayerXml_property_set" class="zhanglw.springinaction.study.s1.c2.xml.CDPlayerXML">
+        <property name="cd" ref="xmlSgtPepers"/>
+    </bean>
+
+    <!--和c命名空间一样-->
+    <bean id="cdPlayerXml_property_set_pNamespace" class="zhanglw.springinaction.study.s1.c2.xml.CDPlayerXML"
+          p:cd-ref="xmlSgtPepers"/>
+
+    <!--将字面量注入属性中-->
+    <!--使用propertty-->
+    <bean id="xmlBlankDisc_p_List" class="zhanglw.springinaction.study.s1.c2.xml.XML_BlankDisc">
+        <property name="title" value="Sgt. Pepper's Lonely Hearts Club Band"/>
+        <property name="artist" value="The Beatles"/>
+        <property name="tracks">
+            <set>
+                <value>Sgt. Pepper's Lonely Hearts Club Band</value>
+                <value>With a Little Help from My Friends</value>
+                <value>Lucy in the Sky with Diamonds</value>
+                <value>Getting Better</value>
+                <value>Fixing a Hole</value>
+                <value>She's Leaving Home</value>
+                <value>Being for the Benefit of Mr. Kite!</value>
+                <value>Within You Without You</value>
+                <value>When I'm Sixty-Four</value>
+                <value>Lovely Rita</value>
+                <value>Good Morning Good Morning</value>
+                <value>Sgt. Pepper's Lonely Hearts Club Band (Reprise)</value>
+                <value>A Day in the Life</value>
+            </set>
+        </property>
+    </bean>
+
+    <util:list id="trackList">
+        <value>Sgt. Pepper's Lonely Hearts Club Band</value>
+        <value>With a Little Help from My Friends</value>
+        <value>Lucy in the Sky with Diamonds</value>
+        <value>Getting Better</value>
+        <value>Fixing a Hole</value>
+        <value>She's Leaving Home</value>
+        <value>Being for the Benefit of Mr. Kite!</value>
+        <value>Within You Without You</value>
+        <value>When I'm Sixty-Four</value>
+        <value>Lovely Rita</value>
+        <value>Good Morning Good Morning</value>
+        <value>Sgt. Pepper's Lonely Hearts Club Band (Reprise)</value>
+        <value>A Day in the Life</value>
+    </util:list>
+
+    <!--使用p命名空间-->
+    <bean id="xmlBlankDisc_pnamespace_List" class="zhanglw.springinaction.study.s1.c2.xml.XML_BlankDisc"
+          p:tracks-ref="trackList"
+          p:title="Sgt. Pepper's Lonely Hearts Club Band"
+          p:artist="The Beatles"/>
+
+
+
+    <bean id="cdPlayerXml_property_set_pNamespace_pList" class="zhanglw.springinaction.study.s1.c2.xml.CDPlayerXML"
+          p:cd-ref="xmlBlankDisc_p_List"/>
+
+    <bean id="cdPlayerXml_property_set_pNamespace_pNamespaceList" class="zhanglw.springinaction.study.s1.c2.xml.CDPlayerXML"
+          p:cd-ref="xmlBlankDisc_pnamespace_List"/>
 </beans>
