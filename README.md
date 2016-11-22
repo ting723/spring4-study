@@ -6,3 +6,6 @@
 
 ### 1 [Spring 之旅](doc/s1c1.md)
 
+### 2 [装配 Bean](doc/s1c2.md)
+
+
