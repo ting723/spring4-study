@@ -5,6 +5,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import zhanglw.springinaction.study.s1.c3.spel.BlankDisc;
@@ -56,11 +58,15 @@ public class EnvironmentInjectionTest {
     }
 
     @RunWith(SpringJUnit4ClassRunner.class)
+    @PropertySource("classpath:app.properties")
     @ContextConfiguration("classpath:placeholder-config.xml")
     public static class InjectFromProperties_XMLConfig {
 
         @Autowired
         private BlankDisc blankDisc;
+
+        @Autowired
+        private Environment environment;
 
         @Test
         public void assertBlankDiscProperties() {
